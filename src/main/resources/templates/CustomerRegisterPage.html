@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<h3>WELCOME TO REGISTER PAGE</h3>
+<form th:action="@{/customer/create}" method="post" th:object="${customer}">
+<pre>
+NAME     <input type="text" th:field="*{cname}"/>
+
+ADDRESS  <input type="text" th:field="*{caddr}"/>
+
+GENDER   <input type="radio"  th:field="*{cgender}" value="M" />M    <input type="radio" th:field="*{cgender}" value="F"/>F
+</pre>
+<input type="submit" value="Register">
+</form>
+<span th:text="${msg}"></span>
+</body>
+</html>

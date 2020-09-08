@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+</head>
+<body>
+<h3>WELCOME TO CUSTOMER DATA PAGE</h3>
+<table border="1">
+<tr>
+<th>ID</th>
+<th>NAME</th>
+<th>ADDRESS</th>
+<th>GENDER</th>
+<th colspan="2">ACTION</th>
+</tr>
+<tr th:each="ob:${list}">
+<td th:text="${ob.cid}"/>
+<td th:text="${ob.cname}"/>
+<td th:text="${ob.caddr}"/>
+<td th:text="${ob.cgender}"/>
+<td><a th:href="@{/customer/edit/{id}(id=${ob.cid})}">EDIT</a>
+<td><a th:href="@{/customer/delete/{id}(id=${ob.cid})}">DELETE</a>
+<!-- <td><a th:href="@{/product/edit/{id}(id=${ob.prodId})}">EDIT</a> -->
+</tr>
+</table>
+</body>
+</html>
